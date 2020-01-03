@@ -108,7 +108,7 @@ extension InfoVC: SFSafariViewControllerDelegate {
     
     func launchGithub() {
         
-        let urlString = "https://www.github.com"
+        let urlString = "https://github.com/AndrewLawler/LyricBook-iOS"
 
         if let url = URL(string: urlString) {
             let vc = SFSafariViewController(url: url)
