@@ -58,7 +58,7 @@ class InfoVC: UIViewController {
     
     func setupTechTextView() {
         view.addSubview(techTextView)
-        techTextView.text = "This app uses programmatic UI, Custom Alerts, JSON Decoable blocks and also a Lyric API."
+        techTextView.text = "This app uses programmatic UI, Custom Alerts, Core Data, JSON Decoable blocks and also a Lyric API."
         
         NSLayoutConstraint.activate([
             techTextView.topAnchor.constraint(equalTo: technologiesHeader.bottomAnchor, constant: 20),
@@ -107,9 +107,7 @@ class InfoVC: UIViewController {
 extension InfoVC: SFSafariViewControllerDelegate {
     
     func launchGithub() {
-        
         let urlString = "https://github.com/AndrewLawler/LyricBook-iOS"
-
         if let url = URL(string: urlString) {
             let vc = SFSafariViewController(url: url)
             vc.delegate = self
