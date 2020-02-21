@@ -1,0 +1,3 @@
+language: objective-c
+xcode_project: LyricBook.xcodeproj # path to your xcodeproj folder
+xcode_destination: platform=iOS Simulator,OS=13.2.2,name=iPhone 11 Pro
