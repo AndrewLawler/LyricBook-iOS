@@ -9,10 +9,6 @@
 import UIKit
 import CoreData
 
-struct LyricSong: Decodable {
-    var lyrics: String?
-}
-
 class ShowSongVC: UIViewController {
     
     let songText = LBSongTextView()
@@ -22,15 +18,20 @@ class ShowSongVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
+        setupScreen()
         setupSongTextView()
         networkCall()
     }
     
-    func setup() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
+    func setupScreen() {
         view.backgroundColor = .systemBackground
-        navigationController?.isNavigationBarHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        
         title = "\(songName ?? "")"
         
         let infoButton = UIButton(type: .contactAdd)
@@ -82,9 +83,8 @@ class ShowSongVC: UIViewController {
             do {
                 // decode the JSON and populate an array
                 let decoder = JSONDecoder()
-                let song = try decoder.decode(LyricSong.self, from: jsonData)
+                let song = try decoder.decode(JSONSong.self, from: jsonData)
                 DispatchQueue.main.async {
-                    print(song.lyrics)
                     if song.lyrics == nil {
                         self.songText.text = "There are no lyrics for this song / This song does not exist"
                     }

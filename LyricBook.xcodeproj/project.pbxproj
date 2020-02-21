@@ -126,6 +126,16 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		64840B9A23C00036003BB091 /* LyricBook-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				646010C623BEDC5000E21497 /* CoreData */,
+				64CAECDA23BEBF0A00F6C4C7 /* LyricBook */,
+				64CAECD923BEBF0A00F6C4C7 /* Products */,
+			);
+			path = "LyricBook-iOS";
+			sourceTree = "<group>";
+		};
 		6491914B23BEF589007DEEC4 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,9 +147,7 @@
 		64CAECCF23BEBF0A00F6C4C7 = {
 			isa = PBXGroup;
 			children = (
-				646010C623BEDC5000E21497 /* CoreData */,
-				64CAECDA23BEBF0A00F6C4C7 /* LyricBook */,
-				64CAECD923BEBF0A00F6C4C7 /* Products */,
+				64840B9A23C00036003BB091 /* LyricBook-iOS */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,6 +157,7 @@
 				64CAECD823BEBF0A00F6C4C7 /* LyricBook.app */,
 			);
 			name = Products;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		64CAECDA23BEBF0A00F6C4C7 /* LyricBook */ = {
@@ -390,7 +399,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQ2J49XM7A;
-				INFOPLIST_FILE = LyricBook/Support/Info.plist;
+				INFOPLIST_FILE = "LyricBook-iOS/LyricBook/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -408,7 +417,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FQ2J49XM7A;
-				INFOPLIST_FILE = LyricBook/Support/Info.plist;
+				INFOPLIST_FILE = "LyricBook-iOS/LyricBook/Support/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

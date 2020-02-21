@@ -11,6 +11,7 @@ import CoreData
 
 class SearchSongVC: UIViewController {
     
+    // Assets
     let logo = UIImageView()
     let songNameField = LBTextFieldSong(placeholder: "Enter a song name")
     let artistNameField = LBTextFieldArtist(placeholder: "Enter an Artist name")
@@ -19,6 +20,7 @@ class SearchSongVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        setupNav()
         setupLogo()
         setupArtistNameField()
         setupSongNameField()
@@ -26,8 +28,20 @@ class SearchSongVC: UIViewController {
         createDismissKeyboardTapGesture()
     }
     
+    
     override func viewWillAppear(_ animated: Bool) {
-        navigationController?.isNavigationBarHidden = true
+        navigationController?.navigationBar.setBackgroundImage(UIImage(), for:.default)
+        navigationController?.navigationBar.shadowImage = UIImage()
+        navigationController?.navigationBar.layoutIfNeeded()
+    }
+    
+    func setupNav() {
+        title = ""
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.addTarget(self, action: #selector(pushInfoVC), for: .touchUpInside)
+        let barButton = UIBarButtonItem(customView: infoButton)
+        navigationItem.rightBarButtonItem = barButton
+        navigationController?.navigationBar.tintColor = .systemRed
     }
     
     func createDismissKeyboardTapGesture() {
@@ -61,12 +75,8 @@ class SearchSongVC: UIViewController {
         logo.image = UIImage(named: "Logo")
         logo.translatesAutoresizingMaskIntoConstraints = false
         
-        let singleTap = UITapGestureRecognizer(target: self, action: #selector(pushInfoVC))
-        logo.isUserInteractionEnabled = true
-        logo.addGestureRecognizer(singleTap)
-        
         NSLayoutConstraint.activate([
-            logo.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            logo.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
             logo.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             logo.heightAnchor.constraint(equalToConstant: 300),
             logo.widthAnchor.constraint(equalToConstant: 300)

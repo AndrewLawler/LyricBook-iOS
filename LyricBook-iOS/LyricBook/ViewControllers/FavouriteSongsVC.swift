@@ -13,8 +13,6 @@ class FavouriteSongsVC: UIViewController {
     
     let tableView = UITableView()
     
-    var safeArea: UILayoutGuide!
-    
     var songName: [String] = []
     var songArtist: [String] = []
     var songs: [NSManagedObject] = []
@@ -66,6 +64,7 @@ class FavouriteSongsVC: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
         tableView.allowsSelection = true
         tableView.translatesAutoresizingMaskIntoConstraints = false
         

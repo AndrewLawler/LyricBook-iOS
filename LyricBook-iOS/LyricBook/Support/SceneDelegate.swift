@@ -22,8 +22,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // setting the root as the tab bar controller and then making it visible
         window?.rootViewController = createTabbar()
         window?.makeKeyAndVisible()
-        
-        configureNavigationBar()
+
+        UINavigationBar.appearance().tintColor = .systemRed
     }
     
     // creating the Search Navigation Controller
@@ -52,10 +52,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // adding the tabbarview controllers as an array of Navigation Controllers which hold View Controllers
         tabbar.viewControllers = [createSearchNC(), createFavoritesNC()]
         return tabbar
-    }
-
-    func configureNavigationBar() {
-        UINavigationBar.appearance().tintColor = .systemRed
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

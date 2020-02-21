@@ -9,10 +9,6 @@
 import UIKit
 import CoreData
 
-struct RecievedSong: Decodable {
-    var lyrics: String?
-}
-
 class ShowFavouriteSongVC: UIViewController {
     
     let songText = LBSongTextView()
@@ -95,9 +91,8 @@ class ShowFavouriteSongVC: UIViewController {
             do {
                 // decode the JSON and populate an array
                 let decoder = JSONDecoder()
-                let song = try decoder.decode(RecievedSong.self, from: jsonData)
+                let song = try decoder.decode(JSONSong.self, from: jsonData)
                 DispatchQueue.main.async {
-                    print(song.lyrics)
                     if song.lyrics == nil {
                         self.songText.text = "There are no lyrics for this song / This song does not exist"
                     }

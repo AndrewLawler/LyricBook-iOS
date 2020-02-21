@@ -6,8 +6,8 @@
 //  Copyright © 2020 andrewlawler. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-struct JSONSong: Decodable {
+struct JSONSong: Codable {
     var lyrics: String?
 }
